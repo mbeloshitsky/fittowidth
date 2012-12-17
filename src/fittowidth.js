@@ -25,11 +25,11 @@
    function fit(isFit) {
 
       /* Wrap pre elements */
-      if (isFit) {
-	 preWrapObj = document.querySelector('head').appendChild(addPreWrapCSS())
-      } else {
-	 preWrapObj.parentNode.removeChild(preWrapObj)
-      }
+     if (isFit) {
+	 	preWrapObj = document.querySelector('head').appendChild(addPreWrapCSS())
+     } else if (preWrapObj && preWrapObj.parentNode) {
+	 	preWrapObj.parentNode.removeChild(preWrapObj)
+     }
 
       /* Walk on DOM items and adjust it */
       iter(isFit ? function (e) {
